@@ -1,0 +1,14 @@
+<div *ngIf="group">
+  <h2>{{group.number}}</h2>
+  <div><label>id: </label>{{group.id}}</div>
+  <div>
+    <label>number: </label>
+    <input [(ngModel)]="group.number" placeholder="number"/>
+ </div>
+ <div>
+   <label>info:</label>
+  <input [(ngModel)]="course.info" placeholder="info"/>
+ </div>
+  <button (click)="goBack()">Back</button>
+</div>
+<button (click)="save()">Save</button>

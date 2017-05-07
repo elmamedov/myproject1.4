@@ -1,0 +1,26 @@
+
+<h2>Groups</h2>
+
+
+<div>
+  <label>New group №:</label> <input #group/>
+  <button (click)="add(group.value); group.value=''">
+    Add
+  </button>
+</div>
+
+<ul class="groups">
+  <li  *ngFor="let group of groups" [class.selected]="group === selectedGroup"(click)="onSelect(group)">
+  <span class="badge">{{group.id}}</span>
+  <span> {{group.number}}</span>
+     <button class="delete"
+      (click)="delete(group); $event.stopPropagation()">x</button>
+ 
+</li>
+</ul>
+<div *ngIf="selectedGroup">
+  <h2>
+    {{selectedGroup.detail | uppercase}} 
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
