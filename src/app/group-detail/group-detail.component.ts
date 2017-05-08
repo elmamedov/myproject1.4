@@ -35,6 +35,11 @@ save(): void {
   this.groupService.update(this.group)
     .then(() => this.goBack());
 }
+save(): void {
+  this.groupService.update(this.group)
+    .then(() => this.goBack());
+}
+
 
 }
 
