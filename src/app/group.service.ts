@@ -38,6 +38,15 @@ update(group: Group): Promise<Group> {
     .then(() => group)
     .catch(this.handleError);
 }
+private headers = new Headers({'Content-Type': 'application/json'});
+update(group: Group): Promise<Group> {
+  const url = `${this.groupsUrl}/${group.id}`;
+  return this.http
+    .put(url, JSON.stringify(group), {headers: this.headers})
+    .toPromise()
+    .then(() => group)
+    .catch(this.handleError);
+}
 
  create(number: string): Promise<Group> {
   return this.http
